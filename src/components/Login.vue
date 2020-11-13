@@ -74,6 +74,7 @@ export default {
       this.$refs.loginFormRef.validate(valid => {
         //console.log(valid);
         if(!valid) return;
+        this.$http.post("login",this.loginForm);
       });
     }
   }
