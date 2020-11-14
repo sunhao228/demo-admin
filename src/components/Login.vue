@@ -72,9 +72,12 @@ export default {
     },
     login() {
       this.$refs.loginFormRef.validate(valid => {
-        //console.log(valid);
-        if(!valid) return;
-        this.$http.post("login",this.loginForm);
+        // console.log(valid);
+        if (!valid) return;
+        const _this = this
+        this.$http.get('http://localhost:8181/admin/searchAllUser/').then(function(resp){
+          console.log(resp)
+        })
       });
     }
   }
